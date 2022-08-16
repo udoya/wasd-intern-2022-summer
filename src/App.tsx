@@ -1,6 +1,6 @@
 import React from "react";
 
-const App = () => {
+function App() {
   return (
     <div className="App">
       <div>
@@ -8,6 +8,6 @@ const App = () => {
       </div>
     </div>
   );
-};
+}
 
 export default App;
