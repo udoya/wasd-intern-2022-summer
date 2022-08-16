@@ -6,8 +6,8 @@
 上記のチュートリアルを TypeScript + React で書くのが目標です
 
 参考リンク
-[React Docs beta](https://beta.reactjs.org/)
-[サバイバル TypeScript](https://typescriptbook.jp/)
+- [React Docs beta](https://beta.reactjs.org/)
+- [サバイバル TypeScript](https://typescriptbook.jp/)
 
 ## 立ち上げ
 
