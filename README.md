@@ -17,3 +17,10 @@ yarn dev
 
 `http://localhost:5173/`
 でローカルの環境が立ち上がれば準備は完了です
+
+### ブランチの切り方
+issueごとに
+`feature/fix-〇〇〇〇-〇〇`のように
+branchを切ってPRを作成 → レビュー → mergeのようにしていきます
+
+[git flowとgithub flowとは？その違いは？](https://qiita.com/mint__/items/bfc58589b5b1e0a1856a)
