@@ -1,7 +1,7 @@
 import React from "react";
-import Image from "./Image";
+import { Image } from "./Image";
 
-const Gallery: React.FC = () => {
+export const Gallery: React.FC = () => {
   return (
     <div className="columns is-vcentered is-multiline">
       <div className="columns is-3">
@@ -10,5 +10,3 @@ const Gallery: React.FC = () => {
     </div>
   );
 };
-
-export default Gallery;

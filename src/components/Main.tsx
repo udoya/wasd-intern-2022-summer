@@ -1,7 +1,7 @@
 import React from "react";
-import Gallery from "./Gallery";
+import { Gallery } from "./Gallery";
 
-const Main: React.FC = () => {
+export const Main: React.FC = () => {
   return (
     <main>
       <section className="section">
@@ -12,5 +12,3 @@ const Main: React.FC = () => {
     </main>
   );
 };
-
-export default Main;

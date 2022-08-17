@@ -1,10 +1,8 @@
 import React from "react";
 import "bulma/css/bulma.css";
-import Header from "./components/Header";
-import Main from "./components/Main";
-import Footer from "./components/Footer";
+import { Header, Main, Footer } from "./components/";
 
-const App: React.FC = () => {
+export const App: React.FC = () => {
   return (
     <div className="App">
       <Header />
@@ -13,5 +11,3 @@ const App: React.FC = () => {
     </div>
   );
 };
-
-export default App;
