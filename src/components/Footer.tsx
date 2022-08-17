@@ -1,6 +1,6 @@
 import React from "react";
 
-const Footer: React.FC = () => {
+export const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="content has-text-centered">
@@ -12,5 +12,3 @@ const Footer: React.FC = () => {
     </footer>
   );
 };
-
-export default Footer;

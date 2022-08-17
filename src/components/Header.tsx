@@ -1,6 +1,6 @@
 import React from "react";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <header className="hero is-dark is-bold">
       <div className="hero-body">
@@ -10,5 +10,3 @@ const Header: React.FC = () => {
     </header>
   );
 };
-
-export default Header;
