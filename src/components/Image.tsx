@@ -1,6 +1,6 @@
 import React from "react";
 
-const Image: React.FC = () => {
+export const Image: React.FC = () => {
   return (
     <div className="card">
       <div className="card-image">
@@ -11,5 +11,3 @@ const Image: React.FC = () => {
     </div>
   );
 };
-
-export default Image;
