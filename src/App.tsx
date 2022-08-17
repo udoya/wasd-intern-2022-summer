@@ -1,7 +1,7 @@
 import React from "react";
 import "bulma/css/bulma.css";
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header className="hero is-dark is-bold">
       <div className="hero-body">
@@ -12,7 +12,7 @@ const Header = () => {
   );
 };
 
-const Image = () => {
+const Image: React.FC = () => {
   return (
     <div className="card">
       <div className="card-image">
@@ -24,7 +24,7 @@ const Image = () => {
   );
 };
 
-const Gallery = () => {
+const Gallery: React.FC = () => {
   return (
     <div className="columns is-vcentered is-multiline">
       <div className="columns is-3">
@@ -34,7 +34,7 @@ const Gallery = () => {
   );
 };
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <main>
       <section className="section">
@@ -46,7 +46,7 @@ const Main = () => {
   );
 };
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer className="footer">
       <div className="content has-text-centered">
