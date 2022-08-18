@@ -1,7 +1,11 @@
 import React from "react";
 
-export const Image: React.FC = () => {
-  const url = "https://images.dog.ceo/breeds/shiba/shiba-8.jpg";
+type urlProps = {
+  url: string;
+};
+
+export const Image: React.FC<urlProps> = (props) => {
+  const { url } = props;
   const altText = "cute dog";
 
   return (
