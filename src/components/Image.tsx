@@ -2,7 +2,7 @@ import React from "react";
 
 export const Image: React.FC = () => {
   const url: string = "https://images.dog.ceo/breeds/shiba/shiba-8.jpg";
-  const altText: string = "cure dog";
+  const altText: string = "cute dog";
 
   return (
     <div className="card">
