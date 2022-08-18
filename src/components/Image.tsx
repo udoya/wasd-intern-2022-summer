@@ -1,11 +1,11 @@
 import React from "react";
 
-type ImageInfoProps = {
+type ImageProps = {
   url: string;
   altText: string;
 };
 
-export const Image: React.FC<ImageInfoProps> = (props) => {
+export const Image: React.FC<ImageProps> = (props) => {
   const { url, altText } = props;
 
   return (
