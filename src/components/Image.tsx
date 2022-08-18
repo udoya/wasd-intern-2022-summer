@@ -1,12 +1,12 @@
 import React from "react";
 
-type urlProps = {
+type ImageInfoProps = {
   url: string;
+  altText: string;
 };
 
-export const Image: React.FC<urlProps> = (props) => {
-  const { url } = props;
-  const altText = "cute dog";
+export const Image: React.FC<ImageInfoProps> = (props) => {
+  const { url, altText } = props;
 
   return (
     <div className="card">
