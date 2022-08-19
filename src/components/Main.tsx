@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 
+import { fetchImages } from "../api/api";
 import { Gallery } from "../components";
 
 export const Main: React.FC = () => {
@@ -17,6 +18,14 @@ export const Main: React.FC = () => {
     "https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
     "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
   ];
+
+  useEffect(() => {
+    const data = async () => {
+      const urls = await fetchImages("shiba");
+      console.log(urls);
+    };
+    data();
+  }, []);
 
   const altText = "cute dogs";
 
