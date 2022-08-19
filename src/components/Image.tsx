@@ -2,7 +2,7 @@ import React from "react";
 
 type ImageProps = {
   url: string;
-  altText: string;
+  altText?: string;
 };
 
 export const Image: React.FC<ImageProps> = (props) => {
