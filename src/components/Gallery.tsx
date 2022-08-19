@@ -1,14 +1,18 @@
 import React from "react";
 
-import { Image } from "./Image";
+import { Image, Loading } from "./index";
 
 type GalleryProps = {
-  urls: string[];
-  altText: string;
+  urls: string[] | null;
+  altText?: string;
 };
 
 export const Gallery: React.FC<GalleryProps> = (props) => {
   const { urls, altText } = props;
+
+  if (urls == null) {
+    return <Loading />;
+  }
 
   return (
     <div className="columns is-vcentered is-multiline">
