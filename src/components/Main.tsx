@@ -2,7 +2,6 @@ import React from "react";
 
 import { Gallery } from "./Gallery";
 
-
 export const Main: React.FC = () => {
   const urls = [
     "https://images.dog.ceo/breeds/shiba/shiba-11.jpg",
@@ -18,12 +17,13 @@ export const Main: React.FC = () => {
     "https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
     "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
   ];
+  const altText = "cute dogs";
 
   return (
     <main>
       <section className="section">
         <div className="container">
-          <Gallery urls={urls}/>
+          <Gallery urls={urls} altText={altText} />
         </div>
       </section>
     </main>

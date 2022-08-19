@@ -2,13 +2,13 @@ import React from "react";
 
 import { Image } from "./Image";
 
-type UrlsProps = {
+type GalleryProps = {
   urls: string[];
+  altText: string;
 };
 
-export const Gallery: React.FC<UrlsProps> = (props) => {
-  const { urls } = props;
-  const altText = "cute dog";
+export const Gallery: React.FC<GalleryProps> = (props) => {
+  const { urls, altText } = props;
 
   return (
     <div className="columns is-vcentered is-multiline">
