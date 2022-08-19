@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Image, Loading } from "./index";
+import { Image, Loading } from "../components";
 
 type GalleryProps = {
   urls: string[] | null;

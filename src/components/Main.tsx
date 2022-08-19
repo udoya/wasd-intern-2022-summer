@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Gallery } from "./Gallery";
+import { Gallery } from "../components";
 
 export const Main: React.FC = () => {
   const urls = [
@@ -17,7 +17,6 @@ export const Main: React.FC = () => {
     "https://images.dog.ceo/breeds/shiba/shiba-8.jpg",
     "https://images.dog.ceo/breeds/shiba/shiba-9.jpg",
   ];
-  // const urls = null;
 
   const altText = "cute dogs";
 
