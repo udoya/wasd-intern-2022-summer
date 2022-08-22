@@ -1,29 +1,37 @@
 import React from "react";
-import { useState } from "react";
+import { useForm, SubmitHandler, Controller } from "react-hook-form";
 
 type FormProps = {
-  handleSelectBreed: (breed: string) => void;
-  handleSubmit: (event: React.FormEvent<HTMLFormElement>) => void;
+  onSubmit: SubmitHandler<FormData>;
   defaultValue: string;
 };
 
+export type FormData = {
+  breed: string;
+};
+
 export const Form: React.FC<FormProps> = (props) => {
-  const { handleSelectBreed, handleSubmit, defaultValue } = props;
+  const { onSubmit, defaultValue } = props;
+
+  const { handleSubmit, control } = useForm<FormData>();
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit(onSubmit)}>
         <div className="field has addons">
           <div className="control is-expanded">
             <div className="select is-fullwidth">
-              <select
+              <Controller
                 name="breed"
+                control={control}
                 defaultValue={defaultValue}
-                onChange={(event) => handleSelectBreed(event.target.value)}
-              >
-                <option value="shiba">Shiba</option>
-                <option value="akita">Akita</option>
-              </select>
+                render={({ field: { value, onChange } }) => (
+                  <select name="breed" value={value} onChange={onChange}>
+                    <option value="shiba">Shiba</option>
+                    <option value="akita">Akita</option>
+                  </select>
+                )}
+              />
             </div>
           </div>
           <div className="control">
