@@ -24,9 +24,9 @@ export const Form: React.FC<FormProps> = (props) => {
   return (
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="field has addons">
+        <div className="field has-addons">
           <div className="control is-expanded">
-            <div className="select is-fullwidth">
+            <div className="select is-fullwidth is-rounded is-medium">
               <Controller
                 name="breed"
                 control={control}
@@ -47,7 +47,7 @@ export const Form: React.FC<FormProps> = (props) => {
             </div>
           </div>
           <div className="control">
-            <button type="submit" className="button is-dark">
+            <button type="submit" className="button is-dark is-medium">
               Reload
             </button>
           </div>
