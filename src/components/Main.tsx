@@ -16,9 +16,13 @@ export const Main: React.FC = () => {
   }, []);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    const urls = await fetchImages(breed);
-    setUrls(urls);
+    try {
+      event.preventDefault();
+      const urls = await fetchImages(breed);
+      setUrls(urls);
+    } catch (error) {
+      throw error;
+    }
   };
 
   const handleSelectBreed = (breed: string) => {
