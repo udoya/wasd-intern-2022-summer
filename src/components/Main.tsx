@@ -5,22 +5,32 @@ import { Gallery, Form } from "../components";
 
 export const Main: React.FC = () => {
   const [urls, setUrls] = useState<string[] | null>(null);
+  const [breed, setBreed] = useState("shiba");
 
   useEffect(() => {
     const data = async () => {
-      const urls = await fetchImages("shiba");
-      console.log(urls);
+      const urls = await fetchImages(breed);
       setUrls(urls);
     };
     data();
   }, []);
+
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    const urls = await fetchImages(breed);
+    setUrls(urls);
+  };
+
+  const handleSelectBreed = (breed: string) => {
+    setBreed(breed);
+  };
 
   const altText = "cute dogs";
   return (
     <main>
       <section className="section">
         <div className="container">
-          <Form />
+          <Form handleSelectBreed={handleSelectBreed} handleSubmit={handleSubmit} defaultValue={breed} />
         </div>
       </section>
       <section className="section">
