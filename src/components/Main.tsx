@@ -1,40 +1,36 @@
 import React, { useEffect, useState } from "react";
+import { SubmitHandler } from "react-hook-form";
 
 import { fetchImages } from "../api/api";
-import { Gallery, Form } from "../components";
+import { Gallery, Form, FormData } from "../components";
 
 export const Main: React.FC = () => {
   const [urls, setUrls] = useState<string[] | null>(null);
-  const [breed, setBreed] = useState("shiba");
+  const defaultValue = "shiba";
+  const altText = "cute dogs";
 
   useEffect(() => {
     const data = async () => {
-      const urls = await fetchImages(breed);
+      const urls = await fetchImages(defaultValue);
       setUrls(urls);
     };
     data();
   }, []);
 
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
-      event.preventDefault();
-      const urls = await fetchImages(breed);
+      const urls = await fetchImages(data.breed);
       setUrls(urls);
     } catch (error) {
       throw error;
     }
   };
 
-  const handleSelectBreed = (breed: string) => {
-    setBreed(breed);
-  };
-
-  const altText = "cute dogs";
   return (
     <main>
       <section className="section">
         <div className="container">
-          <Form handleSelectBreed={handleSelectBreed} handleSubmit={handleSubmit} defaultValue={breed} />
+          <Form onSubmit={onSubmit} defaultValue={defaultValue} />
         </div>
       </section>
       <section className="section">
