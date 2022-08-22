@@ -2,12 +2,13 @@ import React, { useEffect, useState } from "react";
 import { SubmitHandler } from "react-hook-form";
 
 import { fetchImages } from "../api/api";
-import { Gallery, Form, FormData } from "../components";
+import { Gallery, Form } from "../components";
+import { FormData } from "../components/Form";
 
 export const Main: React.FC = () => {
   const [urls, setUrls] = useState<string[] | null>(null);
   const defaultValue = "shiba";
-  const altText = "cute dogs";
+  const altText = "cute dog";
 
   useEffect(() => {
     const data = async () => {
