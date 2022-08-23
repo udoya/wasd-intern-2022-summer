@@ -4,20 +4,15 @@ import { useForm, SubmitHandler, Controller } from "react-hook-form";
 type FormProps = {
   onSubmit: SubmitHandler<FormData>;
   defaultValue: string;
-  breedsArray: string[];
+  breeds: string[];
 };
 
 export type FormData = {
   breed: string;
 };
 
-const capitalize = (s: string) => {
-  if (typeof s !== "string") return "";
-  return s.charAt(0).toUpperCase() + s.slice(1);
-};
-
 export const Form: React.FC<FormProps> = (props) => {
-  const { onSubmit, defaultValue, breedsArray } = props;
+  const { onSubmit, defaultValue, breeds } = props;
 
   const { handleSubmit, control } = useForm<FormData>();
 
@@ -33,11 +28,11 @@ export const Form: React.FC<FormProps> = (props) => {
                 defaultValue={defaultValue}
                 render={({ field: { value, onChange } }) => (
                   <select name="breed" value={value} onChange={onChange}>
-                    {breedsArray.map((breed) => {
+                    {breeds.map((breed) => {
                       return (
-                        //capitalize(無名関数？)をoptionタグ内で定義したかったが、仕方なくForm.tsx内で定義している。
+                        //文字列の先頭を大文字にする
                         <option key={breed} value={breed}>
-                          {capitalize(breed)}
+                          {breed.charAt(0).toUpperCase() + breed.slice(1)}
                         </option>
                       );
                     })}
