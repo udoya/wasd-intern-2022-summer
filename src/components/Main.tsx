@@ -7,11 +7,14 @@ import { FormData } from "../components/Form";
 
 export const Main: React.FC = () => {
   const [urls, setUrls] = useState<string[] | null>(null);
+  const [breeds, setBreeds] = useState<string[]>([]);
   const defaultValue = "shiba";
   const altText = "cute dog";
 
   useEffect(() => {
     const data = async () => {
+      const breeds = await fetchImages();
+      setBreeds(breeds);
       const urls = await fetchImages(defaultValue);
       setUrls(urls);
     };
@@ -31,7 +34,7 @@ export const Main: React.FC = () => {
     <main>
       <section className="section">
         <div className="container">
-          <Form onSubmit={onSubmit} defaultValue={defaultValue} />
+          <Form onSubmit={onSubmit} defaultValue={defaultValue} breeds={breeds} />
         </div>
       </section>
       <section className="section">
